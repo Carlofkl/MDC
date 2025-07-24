@@ -1,32 +1,25 @@
-name: diffusion_fkl
+name: diff-classifier
 channels:
   - pytorch
-  - nvidia
-  - conda-forge
-  - anaconda
   - defaults
+  - conda-forge
 dependencies:
-  - python=3.9
-  - pip
-  - ipdb
-  - flake8
-  - ipykernel
-  - pytest
-  - pytest-env
-  - tqdm
+  - python=3.8
+  - pip=22.3.1
+  - cudatoolkit=11.8
   - numpy
-  - pytorch>=1.11.0
-  - torchvision>=0.12.0
-  - nvidia::cudatoolkit
-  - wandb
-  - tensorboard
-  - transformers>=4.14.1
-  # - diffusers
-  - accelerate
-  - xformers::xformers
-  - seaborn
-  - cuda-nvcc
+  - cmake
   - pip:
-    - git+https://github.com/modestyachts/ImageNetV2_pytorch
-variables:
-  CACHE_NUMBER: 0
+    - --extra-index-url https://download.pytorch.org/whl/cu118
+    - torch==2.3.0
+    - torchaudio==2.3.0
+    - torchvision==0.18.0
+    - diffusers
+    - scikit-image
+    - wandb
+    - matplotlib
+    - einops
+    - transformers
+    - accelerate
+    - opencv-python
+    - pandas
